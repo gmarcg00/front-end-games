@@ -8,14 +8,18 @@
     height: 90px;
     position: fixed;
     margin-top: 90px;
-    display: none;
+    display: flex;
     flex-direction: row;
     align-items: center ;
     justify-content: space-around;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+    pointer-events: none;
 }
 
 .header-search-visible{
-    display: flex;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .header{
