@@ -1,0 +1,41 @@
+.footer{
+    height: 400px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-info-description,
+.footer-info-contact,
+.footer-social-media
+
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.description{
+    color: white;
+}
+
+.social-media-icon{
+    font-size: x-large;
+    color:white;
+}
+
+.footer-social-media-newsletter-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.social-media-icons{
+    padding: 20px 0;
+}
+
+.newsletter-input{
+    margin: 20px 0;
+}

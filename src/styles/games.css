@@ -1,0 +1,24 @@
+.container-games{
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+
+.container-title{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.games-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title{
+    color: black;
+}
+
+

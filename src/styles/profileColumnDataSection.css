@@ -1,0 +1,15 @@
+.profile-column-data-section{
+    margin-top: 13px;
+    margin-left: 28px;
+}
+
+.social-media-label{
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.social-media-text{
+    font-size: large;
+}

@@ -1,0 +1,19 @@
+.menu-item-large{
+    width: 700px;
+    height: 450px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    color: white;
+    background-image: linear-gradient(to right,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)),url("https://media.rawg.io/media/games/bf7/bf73b105ccbba42107986bbcd96fcada.jpg");
+    background-size: 100% 100%;
+    display: flex;
+}
+
+.item-title{
+    margin-left: 50px;
+    margin-top: 30px;
+    font-size: 70px;
+    color: rgba(106, 224, 16, 0.9);
+}
