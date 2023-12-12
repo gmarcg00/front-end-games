@@ -5,13 +5,13 @@ import {SingleGameSection} from "../components/SingleGameSection";
 import {Footer} from "../components/Footer";
 
 
-import {Games} from "../components/Games";
+import {GamesSection} from "../components/GamesSection";
 function App() {
   return (
     <div className="App">
         <Header/>
         <MainSection/>
-        <Games/>
+        <GamesSection/>
         <SingleGameSection/>
         <Footer/>
     </div>

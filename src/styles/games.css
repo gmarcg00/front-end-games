@@ -1,24 +1,6 @@
-.container-games{
-    display: flex;
-    flex-direction: column;
-    background-color: whitesmoke;
+body{
+    background-image: linear-gradient(to right,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.8)),url("https://media.rawg.io/media/games/bf7/bf73b105ccbba42107986bbcd96fcada.jpg");
+
 }
-
-.container-title{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.games-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.title{
-    color: black;
-}
-
-

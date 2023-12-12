@@ -38,7 +38,7 @@ export const Profile = () => {
                     </div>
                     <div className="menu-container">
                         <div className="menu-container-row-1">
-                            <MenuItemLarge title="Games"/>
+                            <MenuItemLarge title="GamesSection"/>
                             <MenuItemMedium title="Reviews"/>
                         </div>
                         <div className="menu-container-row-2">

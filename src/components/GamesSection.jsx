@@ -1,9 +1,9 @@
 import React from "react";
-import '../styles/games.css';
+import '../styles/gamesSection.css';
 
 import {GameCard} from "./GameCard";
 
-export const Games = () => {
+export const GamesSection = () => {
     return(
         <div className="container-games">
             <div className="container-title">
