@@ -1,6 +1,11 @@
 body{
-    background-image: linear-gradient(to right,
-    rgba(0, 0, 0, 0.95),
-    rgba(0, 0, 0, 0.8)),url("https://media.rawg.io/media/games/bf7/bf73b105ccbba42107986bbcd96fcada.jpg");
+   background-color: silver;
+}
 
+.filter-section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+    margin-left: 50px;
+    width: 415px;
 }

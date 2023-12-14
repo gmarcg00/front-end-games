@@ -6,7 +6,7 @@
 .user-avatar{
     height: 200px;
     width: 200px;
-    background-image: url("https://media.rawg.io/media/games/bf7/bf73b105ccbba42107986bbcd96fcada.jpg");
+    background-image: url("../images/ellie.jpg");
     background-size: cover;
     border-radius: 50%;
     margin: 15px auto;

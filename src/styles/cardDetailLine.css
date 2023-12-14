@@ -1,0 +1,23 @@
+
+.card-section-2-row-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+.game-detail{
+    margin-left: 8px;
+    color: black;
+    font-size: large;
+}
+
+.card-section-2-row-footer{
+    margin: 0 8px;
+    height: 2px;
+    background-color: black;
+    opacity: 0.4;
+    border-radius: 2px;
+}

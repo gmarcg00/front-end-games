@@ -1,0 +1,8 @@
+.card-section-2-row-button{
+    width: 96%;
+    margin: 8px 8px;
+}
+
+.card-section-2-row-button:hover{
+    background-color: rgba(130, 130, 130, 0.5);
+}

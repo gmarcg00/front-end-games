@@ -11,22 +11,11 @@
 .game-card-image{
     width: 300px;
     height: 175px;
-    background-image: url("https://media.rawg.io/media/screenshots/75b/75b04439f728fa38cc16e59515a4d66d.jpg");
+    background-image: url("https://media.rawg.io/media/games/a5a/a5a7fb8d9cb8063a8b42ee002b410db6.jpg");
     background-size: cover;
-    border-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     transition: transform 0.5s ease-out;
-}
-
-.game-card-image:hover{
-    transform: scale(1.05);
-}
-
-.game-name {
-    color: black;
-}
-
-.game-icon {
-    color:black;
 }
 
 .game-card-button{
