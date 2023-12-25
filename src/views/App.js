@@ -1,21 +1,25 @@
-import '../App.css';
-import {Header} from "../components/Header";
-import {MainSection} from "../components/MainSection";
-import {SingleGameSection} from "../components/SingleGameSection";
-import {Footer} from "../components/Footer";
 
+import {GamesContext} from "../context/GamesContext";
+import {AvatarContext} from "../context/AvatarContext";
+import {useGames} from "../hooks/useGames";
+import {useAvatars} from "../hooks/useAvatars";
+import {Router} from "../router/Router";
 
-import {GamesSection} from "../components/GamesSection";
 function App() {
-  return (
-    <div className="App">
-        <Header/>
-        <MainSection/>
-        <GamesSection/>
-        <SingleGameSection/>
-        <Footer/>
-    </div>
-  );
+
+    const games = useGames();
+    const avatars = useAvatars();
+
+
+    if (games.length > 0 && avatars.length > 0){
+        return (
+            <AvatarContext.Provider value={{avatars}}>
+                <GamesContext.Provider value={{games}}>
+                    <Router></Router>
+                </GamesContext.Provider>
+            </AvatarContext.Provider>
+        );
+    }
 }
 
 export default App;

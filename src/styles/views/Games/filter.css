@@ -1,0 +1,27 @@
+.select-title{
+    display: none;
+}
+
+.filter{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f7f9fc;
+    border: 1px solid #d1d3e2;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    outline: none;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    margin-right: 8px;
+}
+
+.filter option {
+    background-color: #ffffff;
+    color: #333;
+    padding: 10px 15px;
+    font-size: 16px;
+}

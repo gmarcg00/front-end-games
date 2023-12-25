@@ -1,17 +1,17 @@
-import {Header} from "../components/Header";
-import {Footer} from "../components/Footer";
-import {MenuItemLarge} from "../components/MenuItemLarge";
-import {MenuItemMedium} from "../components/MenuItemMedium";
-import {MenuItemSmall} from "../components/MenuItemSmall";
-import {ProfileColumnHeader} from "../components/ProfileColumnHeader";
-import {ProfileColumnDataSection} from "../components/ProfileColumnDataSection";
-import '../styles/profile.css';
+import {Header} from "../components/header/Header";
+import {Footer} from "../components/footer/Footer";
+import {MenuItemLarge} from "../components/views/Profile/MenuItemLarge";
+import {MenuItemMedium} from "../components/views/Profile/MenuItemMedium";
+import {MenuItemSmall} from "../components/views/Profile/MenuItemSmall";
+import {ProfileColumnHeader} from "../components/views/Profile/ProfileColumnHeader";
+import {ProfileColumnDataSection} from "../components/views/Profile/ProfileColumnDataSection";
+import '../styles/views/Profile/profile.css';
 import React from "react";
 export const Profile = () => {
 
     const arrayUserLibrary = [
         { class: 'fa-solid fa-gamepad', title: 'Games' },
-        { class: 'fa-regular fa-message', title: 'Reviews' },
+        { class: 'fa-regular fa-message', title: 'Review' },
         { class: 'fa-regular fa-images', title: 'Avatars' }
     ];
 

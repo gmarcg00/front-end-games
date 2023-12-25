@@ -1,0 +1,14 @@
+.game-details-section-images-screenshot{
+    width: 246px;
+    height: 150px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+}
+
+.screenshot-left-column{
+    margin-right: 4px;
+}
+
+.screenshot-right-column{
+    margin-left: 4px;
+}

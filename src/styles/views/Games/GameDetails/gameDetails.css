@@ -1,0 +1,67 @@
+.game-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+    margin-right: 200px;
+    margin-left: 210px;
+}
+
+.game-details-section-info{
+    display: flex;
+    flex-direction: column;
+    width: 100vh;
+    height: 100vh;
+    padding-top: 20px;
+    padding-left: 95px;
+}
+
+.game-details-section-info-title{
+    display: flex;
+    flex-direction: row;
+}
+
+.game-details-section-images{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vh;
+    height: 100vh;
+    padding-top: 20px;
+}
+
+.game-details-section-images-trailer{
+    display: flex;
+    width: 500px;
+    height: 300px;
+    margin-bottom: 32px;
+}
+
+.game-details-section-images-screenshots{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 500px;
+}
+
+
+.game-details-section-info-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.game-details-section-info-item-title{
+    margin-right: 8px;
+}
+
+.game-details-section-info-title,
+.game-details-section-info-item-title,
+.game-details-section-info-item-value{
+    color: white;
+}
+
+.game-details-section-info-description{
+    display: flex;
+    flex-direction: column;
+}

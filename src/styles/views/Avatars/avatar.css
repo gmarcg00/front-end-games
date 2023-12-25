@@ -1,0 +1,31 @@
+.price-text{
+    margin-top: 8px;
+    font-size: large;
+    color: silver;
+}
+
+.avatar-name{
+    font-size: large;
+    color: black;
+}
+
+.avatar-container-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
+    background-size: 100% 100%;
+    margin: 10px 20px;
+}
+
+.avatar-container{
+    display: flex;
+    flex-direction: column;
+}

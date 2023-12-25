@@ -1,0 +1,28 @@
+
+.game-review-data-icons{
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 6px;
+}
+
+.game-platform-icons{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+    margin-left: 6px;
+}
+
+.game-name {
+    color: black;
+    width: 50%;
+}
+
+.game-icon {
+    color:black;
+}
+
+.game-name:hover,
+.game-icon:hover{
+    color: rgba(130, 130, 130, 0.5);
+}

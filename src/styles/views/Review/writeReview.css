@@ -1,0 +1,28 @@
+.write-review{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    height: 70vh;
+}
+
+
+.write-review-input{
+    margin-bottom: 25px;
+    width: 950px;
+    height: 25px;
+}
+
+.write-review-input-description{
+    margin-bottom: 25px;
+    width: 950px;
+    height: 200px;
+
+}
+
+.write-review-submit-button{
+    width: 950px;
+    height: 50px;
+}

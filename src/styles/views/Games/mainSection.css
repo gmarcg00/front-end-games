@@ -1,0 +1,52 @@
+body{
+    transition: background-image 2s ease-in-out;
+}
+
+.container{
+    width: 100%;
+    height: 850px;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+}
+
+.container-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 100px;
+    padding-bottom: 145px;
+}
+
+.container-info-icons{
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+}
+
+label{
+    font-family: Jazz LET, fantasy;
+    font-size:xx-large ;
+    color:white;
+}
+
+button{
+    margin-top: 10px;
+    height: 40px;
+    width: 120px;
+    font-family: Jazz LET, fantasy;
+    font-size: large;
+    border-radius: 10px;
+}
+
+.arrow-left{
+    color: silver;
+    font-size: x-large;
+}
+
+.image-transition{
+    transition: background-image 2s ease-in-out;
+}
+
+
+
