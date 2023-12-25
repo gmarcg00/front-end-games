@@ -2,17 +2,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
     height: 90px;
     margin-left: 40px;
     cursor: pointer;
-}
-
-.header-profile-item:hover{
-    background-color: whitesmoke;
-}
-
-.header-profile-item:hover > *{
-    color:black;
 }
 
 .profile-bar-icon{
@@ -23,16 +16,18 @@
     font-size: 25px;
     margin-left: 55px;
     cursor: pointer;
+    width: 2px;
 }
 
 .close-icon-container{
     display: flex;
 }
 
-.login-bar-close-icon{
-    margin-left: 1574px;
+.empty-input{
+    opacity: 0;
+    cursor: auto;
+    pointer-events: none;
+    width: 80%;
 }
 
-.signup-bar-close-icon{
-    margin-left: 1550px;
-}
+

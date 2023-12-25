@@ -20,7 +20,6 @@ export const Footer = () => {
     return(
         <div className="footer">
             <div className="footer-info-description">
-                <img src="../../images/web-logo1.jpg"  alt={"Website Icon"}></img>
                 <p className="description-value"> YOUR FREE VIDEOGAME WEBSITE</p>
             </div>
             <div className="footer-info-contact">

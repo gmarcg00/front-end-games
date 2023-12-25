@@ -1,0 +1,47 @@
+.review{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 550px;
+    height: 265px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.review-description{
+    color: white;
+    font-size: 16px;
+}
+
+.review-user{
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+}
+
+.review-user-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: silver;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-user-data{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5px;
+    height: 60px;
+    color: white;
+}
+.review-user-name,
+.review-user-date {
+    display: flex;
+    padding-bottom: 10px;
+    margin-left: 10px;
+}

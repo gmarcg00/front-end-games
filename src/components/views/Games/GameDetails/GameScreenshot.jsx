@@ -11,7 +11,6 @@ export const GameScreenshot = ({columnClass,backgroundImage,index}) => {
             className={`game-details-section-images-screenshot ${columnClass}`}
             small={`${backgroundImage}`}
             large={`${backgroundImage}`}
-            alt="Hello World!"
         />
     )
 }

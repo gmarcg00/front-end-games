@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext} from "react";
 import {Header} from "../components/header/Header";
 import {Footer} from "../components/footer/Footer";
 import {GameCardMedium} from "../components/views/Games/GameCard/GameCardMedium";
@@ -14,14 +14,13 @@ export const Games = () => {
             <Header/>
             <div id="filters-section" className="filters-section">
                 <div id="filters-section-title" className="filters-section-title">
-                    <h1 className="title-games-section">Games Section</h1>
+                    <h1 className="title-section">Games Section</h1>
                 </div>
                 <div id="filters-section-container" className="filters-section-container">
                     <Filter title={"Genre"} options={["Action","Shooter","Strategy","Survival","Sports"]}/>
                     <Filter title={"Platform"} options={["Action","Shooter","Strategy","Survival","Sports"]}/>
                     <Filter title={"Company"} options={["Action","Shooter","Strategy","Survival","Sports"]}/>
                 </div>
-
             </div>
             <div id="games-section" className="games-section">
                 <div className="games-section-container">

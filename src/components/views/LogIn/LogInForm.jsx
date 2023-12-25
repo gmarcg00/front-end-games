@@ -13,10 +13,7 @@ export const LogInForm = () => {
     return(
         <div className="login-container">
             <div className="logo">
-                LOGO
-            </div>
-            <div className="logo">
-                <label>LOG IN</label>
+                <label className="color-black">LOG IN</label>
             </div>
             <form id="login-form">
                 <div className="form-item">

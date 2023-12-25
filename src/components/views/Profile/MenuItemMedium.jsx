@@ -5,7 +5,7 @@ import '../../../styles/views/Profile/menuItemMedium.css';
 export const MenuItemMedium = ({title}) => {
     return(
         <div className="menu-item-medium">
-            {title}
+            <label className="item-title-medium">{title}</label>
         </div>
     )
 }

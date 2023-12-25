@@ -1,10 +1,21 @@
-import React, { useEffect } from "react";
+import React, {useContext, useEffect} from "react";
 import {ProfileHeaderBarItem} from "./ProfileHeaderBarItem";
+import {GameCardMedium} from "../views/Games/GameCard/GameCardMedium";
 import {Avatar} from "../views/Avatars/Avatar";
 import '../../styles/header/header.css';
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
+import {AvatarContext} from "../../context/AvatarContext";
+import {GamesContext} from "../../context/GamesContext";
+import {Review} from "../views/Reviews/Review";
 
 export const Header = () => {
+
+    const { avatars } = useContext(AvatarContext);
+    const { games } = useContext(GamesContext);
+
+    const arrayAvatars = avatars.slice(0, 3);
+    const arrayGames = games.slice(0, 3);
+
 
     useEffect(() => {
         let header = document.getElementById("header");
@@ -14,8 +25,12 @@ export const Header = () => {
         let searchIcon = document.getElementById("search-icon");
         let searchBarCloseIcon = document.getElementById("search-bar-close-icon");
         let profileIcon = document.getElementById("profile-icon");
-        let shopText = document.getElementById("shop-text");
-        let shopBar = document.getElementById("shop-bar");
+        let avatarText = document.getElementById("avatar-text");
+        let avatarBar = document.getElementById("avatar-bar");
+        let gamesText = document.getElementById("games-text");
+        let gamesBar = document.getElementById("games-bar");
+        let reviewsText = document.getElementById("reviews-text");
+        let reviewsBar = document.getElementById("reviews-bar");
 
         const enableSearchVisibility = () => {
             if(profileBar.classList.contains("header-profile-visible")) profileBar.classList.remove("header-profile-visible");
@@ -49,31 +64,70 @@ export const Header = () => {
             profileIcon.classList.remove("color-black")
         }
 
+        const addEventsListeners = () => {
+            avatarText.addEventListener("mouseenter", () => {
+                avatarBar.classList.add("header-shop-visible")
+            })
+
+            avatarText.addEventListener("mouseleave", () => {
+                avatarBar.classList.remove("header-shop-visible")
+            })
+
+            avatarBar.addEventListener("mouseenter", () => {
+                cursorOnHeader()
+                avatarBar.classList.add("header-shop-visible")
+            })
+
+            avatarBar.addEventListener("mouseleave", () => {
+                cursorOutHeader()
+                avatarBar.classList.remove("header-shop-visible")
+            })
+
+            gamesText.addEventListener("mouseenter", () => {
+                gamesBar.classList.add("header-games-visible")
+            })
+
+            gamesText.addEventListener("mouseleave", () => {
+                gamesBar.classList.remove("header-games-visible")
+            })
+
+            gamesBar.addEventListener("mouseenter", () => {
+                cursorOnHeader()
+                gamesBar.classList.add("header-games-visible")
+            })
+
+            gamesBar.addEventListener("mouseleave", () => {
+                cursorOutHeader()
+                gamesBar.classList.remove("header-games-visible")
+            })
+
+            reviewsText.addEventListener("mouseenter", () => {
+                reviewsBar.classList.add("header-reviews-visible")
+            })
+
+            reviewsText.addEventListener("mouseleave", () => {
+                reviewsBar.classList.remove("header-reviews-visible")
+            })
+
+            reviewsBar.addEventListener("mouseenter", () => {
+                cursorOnHeader()
+                reviewsBar.classList.add("header-reviews-visible")
+            })
+
+            reviewsBar.addEventListener("mouseleave", () => {
+                cursorOutHeader()
+                reviewsBar.classList.remove("header-reviews-visible")
+            })
+        }
+
         searchIcon.addEventListener("click", enableSearchVisibility)
         searchBarCloseIcon.addEventListener("click", disableSearchVisibility)
         profileIcon.addEventListener("click",enableProfileVisibility)
         header.addEventListener("mouseenter", cursorOnHeader)
         header.addEventListener("mouseleave", cursorOutHeader)
+        addEventsListeners()
 
-        shopText.addEventListener("mouseenter", () => {
-            shopBar.classList.add("header-shop-visible")
-        })
-
-        shopText.addEventListener("mouseleave", () => {
-            shopBar.classList.remove("header-shop-visible")
-        })
-
-        shopBar.addEventListener("mouseenter", () => {
-            cursorOnHeader()
-            shopBar.classList.add("header-shop-visible")
-        })
-
-        shopBar.addEventListener("mouseleave", () => {
-            cursorOutHeader()
-            shopBar.classList.remove("header-shop-visible")
-        })
-
-    })
+    },[])
 
     return(
         <div className="header-container">
@@ -83,14 +137,14 @@ export const Header = () => {
                 </div>
                 <nav>
                     <ul id="list">
-                        <div className="xx">
+                        <div id="games-text" className="list-item">
                             <Link  to="/games"><li>Games</li></Link>
                         </div>
-                        <div className="xx">
+                        <div id="reviews-text" className="list-item">
                             <Link  to="/reviews"><li>Reviews</li></Link>
                         </div>
-                        <div id="shop-text" className="xx">
-                            <Link to="/shop"><li>Avatars</li></Link>
+                        <div id="avatar-text" className="list-item">
+                            <Link to="/avatars"><li>Avatars</li></Link>
                         </div>
                     </ul>
                 </nav>
@@ -112,15 +166,31 @@ export const Header = () => {
             </div>
             <div id="profile-bar" className="header-profile" >
                  <ProfileHeaderBarItem text={"Sign up"} iconClass={"fa-solid fa-user-plus"} barItemName={"signup"}/>
-                 <ProfileHeaderBarItem text={"Log in"} iconClass={"fa-solid fa-arrow-right-to-bracket"} barItemName={"login"} />
+                 <ProfileHeaderBarItem text={`Log in`} iconClass={"fa-solid fa-arrow-right-to-bracket"} barItemName={"login"} />
             </div>
-            <div id="shop-bar" className="header-shop">
+            <div id="avatar-bar" className="header-shop">
                 <div className="avatars-container">
-                    <Avatar name={"Ellie - The Last Of Us"} price={"1.5"} index={"1"} backgroundImage="../"/>
-                    <Avatar name={"Joel - The Last Of Us"} price={"1.0"} index={"2"} backgroundImage={"../../../images/joel.jpg"}/>
-                    <Avatar name={"Obi Wan Kenobi - Star Wars"} price={"1.0"} index={"3"} backgroundImage={"../../../images/obi-wan.jpg"}/>
-                    <Avatar name={"Aloy - Horizon Forbidden West"} price={"0.5"} index={"4"} backgroundImage={"../../../images/aloy.jpg"}/>
+                    {
+                        arrayAvatars.map((avatar) =>(
+                            <Avatar name={avatar.name} price={avatar.price} index={avatar.id} backgroundImage={avatar.backgroundImage} textColor={"color-black"}/>
+                        ))
+                    }
                 </div>
+            </div>
+            <div id="games-bar" className="header-games">
+                <div className="header-games-container">
+                    {
+                        arrayGames.map((game) =>(
+                            <div key={game.id} id={`game-container-header-${game.id}`} className="game-card-medium-container">
+                                <GameCardMedium game={game} index={`header-${game.id}`} />
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+            <div id="reviews-bar" className="header-reviews">
+                <Review title={"Awesome"} description={"Exciting gameplay mechanics with immersive storytelling; visually stunning graphics elevate the experience. A must-play title for both casual gamers and hardcore enthusiasts"} userName={"alex24"} date={"10-10-2022"} gameImage={"https://media.rawg.io/media/games/a5a/a5a7fb8d9cb8063a8b42ee002b410db6.jpg"} userImage={"/images/ellie.jpg"} index={"header-1"}/>
+                <Review title={"Amazing"} description={"Engaging narrative paired with smooth controls; atmospheric soundtrack enhances the gameplay. A standout choice for fans of the genre. No words can describe what I have felt when I was playing it."} userName={"eduu_7"} date={"03-12-2021"} gameImage={"https://media.rawg.io/media/games/1aa/1aa4ca34a8a6bb57a2e065c8332dc230.jpg"} userImage={"/images/obi-wan.jpg"} index={"header-2"}/>
             </div>
         </div>
     )

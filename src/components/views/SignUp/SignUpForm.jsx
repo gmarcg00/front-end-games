@@ -5,9 +5,7 @@ export const SignUpForm = () => {
     return(
         <div className="signup-container">
             <div className="logo">
-            </div>
-            <div className="logo">
-                <label>SIGN UP</label>
+                <label className={"color-black"}>SIGN UP</label>
             </div>
             <form id="signup-form">
                 <div className="form-item">

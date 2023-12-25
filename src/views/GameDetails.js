@@ -6,6 +6,7 @@ import {Footer} from "../components/footer/Footer";
 import {GameTrailer} from "../components/views/Games/GameDetails/GameTrailer";
 import {GameScreenshot} from "../components/views/Games/GameDetails/GameScreenshot";
 import '../styles/views/Games/GameDetails/gameDetails.css';
+import {CardDetailLine} from "../components/views/Games/GameCard/CardDetailLine";
 import {GameCardMedium} from "../components/views/Games/GameCard/GameCardMedium";
 
 export const GameDetails = () => {
