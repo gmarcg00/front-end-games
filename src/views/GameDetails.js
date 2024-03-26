@@ -12,7 +12,7 @@ export const GameDetails = () => {
 
     const host = process.env.REACT_APP_GR_GAMES_HOST;
     const uri = process.env.REACT_APP_GR_GAMES_URI;
-    const url = `http://${host}${uri}/${slug}`;
+    const url = `https://${host}${uri}/${slug}`;
 
     const getGames = async () => {
         const response = await fetch(url)
