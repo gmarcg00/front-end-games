@@ -3,11 +3,11 @@ import ModalImage from "react-modal-image";
 import '../../../../styles/views/Games/GameDetails/gameScreenshot.css';
 
 
-export const GameScreenshot = ({columnClass,backgroundImage,index}) => {
+export const GameScreenshot = ({columnClass,backgroundImage,id}) => {
 
     return(
         <ModalImage
-            id={`screenshot-${index}`}
+            id={`screenshot-${id}`}
             className={`game-details-section-images-screenshot ${columnClass}`}
             small={`${backgroundImage}`}
             large={`${backgroundImage}`}

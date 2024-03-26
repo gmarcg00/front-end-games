@@ -1,14 +1,10 @@
-import React, {useContext} from "react";
+import React,{useContext} from "react";
 import '../../../styles/views/Games/gamesSection.css';
-
-import {GameCardMedium} from "./GameCard/GameCardMedium";
 import {GamesContext} from "../../../context/GamesContext";
+import {GameCardMedium} from "./GameCard/GameCardMedium";
 
 export const GamesSection = () => {
-
     const {games} = useContext(GamesContext);
-
-    const gamesArray = games.slice(0,8)
 
     return(
         <div className="container-games">
@@ -16,13 +12,17 @@ export const GamesSection = () => {
                 <label className="games-section-title">MORE POPULAR IN 2023</label>
             </div>
             <div id="games-container" className="games-container">
-                {gamesArray.map((game) => {
-                    return(
-                        <div key={game.id} id={`game-container-${game.id}`} className="game-card-medium-container">
-                            <GameCardMedium game={game} index={game.id} />
-                        </div>
-                    )
-                })}
+                {Array.isArray(games) && games.length > 0 ? (
+                    games.map((game) => {
+                        return(
+                            <div id={`game-container-${game.id}`} key={`game-${game.id}`} className="game-card-medium-container">
+                                <GameCardMedium game={game} index={game.id} />
+                            </div>
+                        )
+                    })
+                )
+                :(<></>)
+                }
             </div>
         </div>
     )

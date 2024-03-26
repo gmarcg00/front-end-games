@@ -1,23 +1,25 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext, useEffect,useState} from "react";
 import {ProfileHeaderBarItem} from "./ProfileHeaderBarItem";
 import {GameCardMedium} from "../views/Games/GameCard/GameCardMedium";
 import {Avatar} from "../views/Avatars/Avatar";
 import '../../styles/header/header.css';
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {AvatarContext} from "../../context/AvatarContext";
 import {GamesContext} from "../../context/GamesContext";
 import {Review} from "../views/Reviews/Review";
 
 export const Header = () => {
+    const [arrayGames,setArrayGames] = useState([]);
 
     const { avatars } = useContext(AvatarContext);
     const { games } = useContext(GamesContext);
 
     const arrayAvatars = avatars.slice(0, 3);
-    const arrayGames = games.slice(0, 3);
-
 
     useEffect(() => {
+        if(games && games.length > 0) {
+            setArrayGames(games.slice(0, 3));
+        }
         let header = document.getElementById("header");
         let headerTextElements = document.querySelectorAll("li");
         let searchBar = document.getElementById("search-bar");
@@ -127,7 +129,7 @@ export const Header = () => {
         header.addEventListener("mouseleave", cursorOutHeader)
         addEventsListeners()
 
-    },[])
+    },[games])
 
     return(
         <div className="header-container">

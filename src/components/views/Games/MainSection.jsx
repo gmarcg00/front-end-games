@@ -1,22 +1,31 @@
-import React, {useEffect,useState} from "react";
+import React, {useEffect,useState,useContext} from "react";
 import '../../../styles/views/Games/mainSection.css';
+import {GamesContext} from "../../../context/GamesContext";
 
-export const MainSection = ({games}) => {
+export const MainSection = () => {
     const [count, setCount] = useState(0);
+    const [arrayGames, setArrayGames] = useState([]);
+    const {games} = useContext(GamesContext);
 
     useEffect(() => {
-        let gameTitle = document.getElementById("container-info-game-title")
-        gameTitle.innerText = games[count].name
-        let container = document.getElementById("containerMainSection")
-        container.style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${games[count].backgroundImage})`;
-        container.style.backgroundSize = "100% 100%";
-        container.style.backgroundSize = "background 2s ease-in-out;"
-    },[count])
+        setArrayGames(games);
+        if (Array.isArray(arrayGames) && arrayGames.length > 0) {
+            let gameTitle = document.getElementById("container-info-game-title")
+            gameTitle.innerText = arrayGames[count].name
+            let container = document.getElementById("containerMainSection")
+            container.style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${arrayGames[count].background_image})`;
+            container.style.backgroundSize = "100% 100%";
+            container.style.backgroundSize = "background 2s ease-in-out;"
+        }
+    },[count,games])
 
 
     setTimeout(() =>{
-        if(count === games.length-1) setCount(0)
-        else setCount(count + 1)
+        if (Array.isArray(arrayGames) && arrayGames.length > 0) {
+            if(count === arrayGames.length-1) setCount(0)
+            else setCount(count + 1)
+        }
+
     },5000)
 
 

@@ -2,7 +2,7 @@ import React,{useEffect} from "react";
 import { Link,useNavigate } from "react-router-dom";
 import '../../../../styles/views/Games/GameCard/cardPreviewInfo.css';
 
-export const CardPreviewInfo = ({platformIconClass,title,index}) => {
+export const CardPreviewInfo = ({platformIconClass,title,index,slug}) => {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -21,7 +21,7 @@ export const CardPreviewInfo = ({platformIconClass,title,index}) => {
                     ))
                 }
             </div>
-            <Link to={`/game/${index}`}> <label className="game-name"> {title}</label></Link>
+            <Link to={`/game/${slug}`}> <label className="game-name"> {title}</label></Link>
             <div className="game-review-data-icons">
                 <i className="fa-solid fa-heart game-icon"></i>
                 <i id={`write-review-button-${index}`} className="fa-solid fa-message game-icon"></i>

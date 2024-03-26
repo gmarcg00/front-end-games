@@ -13,7 +13,7 @@ export const GameCardMedium = ({game,index}) => {
         let cardSection1 = document.getElementById(`card-section-1-${index}`);
         let cardSection2 = document.getElementById(`card-section-2-${index}`);
 
-        cardBackground.style.backgroundImage = `url(${game.backgroundImage})`;
+        cardBackground.style.backgroundImage = `url(${game.background_image})`;
         cardBackground.style.backgroundSize = "100% 100%";
 
         card.addEventListener("mouseenter",() => {
@@ -31,7 +31,7 @@ export const GameCardMedium = ({game,index}) => {
             <div id={`card-section-1-${index}`} className="card-section-1 card-section-1-border-card-section-2-not-visible">
                 <div id={`game-card-image-${index}`} className="game-card-image"></div>
                 <div className="card-section-1-data">
-                    <CardPreviewInfo title={game.name} platformIconClass={["fa-brands fa-playstation","fa-brands fa-xbox","fa-brands fa-windows"]} index={game.id}/>
+                    <CardPreviewInfo title={game.name} platformIconClass={["fa-brands fa-playstation","fa-brands fa-xbox","fa-brands fa-windows"]} index={game.id} slug={game.slug}/>
                 </div>
             </div>
             <div id={`card-section-2-${index}`} className="card-section-2">
