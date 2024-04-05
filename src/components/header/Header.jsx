@@ -174,7 +174,7 @@ export const Header = () => {
                 <div className="avatars-container">
                     {
                         arrayAvatars.map((avatar) =>(
-                            <Avatar name={avatar.name} price={avatar.price} index={avatar.id} backgroundImage={avatar.backgroundImage} textColor={"color-black"}/>
+                            <Avatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={avatar.id} backgroundImage={avatar.base64Img} textColor={"color-black"}/>
                         ))
                     }
                 </div>

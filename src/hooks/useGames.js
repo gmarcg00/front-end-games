@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 export const useGames = () => {
     const [games, setGames] = useState([]);
     const host = process.env.REACT_APP_GR_GAMES_HOST;
-    const uri = process.env.REACT_APP_GR_GAMES_URI;
+    const uri = process.env.REACT_APP_GR_GAMES_GAMES_URI;
     const url = `https://${host}${uri}`;
 
     useEffect(() => {

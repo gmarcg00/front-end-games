@@ -2,18 +2,18 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    width: 550px;
-    height: 265px;
+    width: 440px;
+    height: 212px;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 15px;
     margin-left: 10px;
     margin-right: 10px;
+    font-size: 12px;
 }
 
 .review-description{
     color: white;
-    font-size: 16px;
 }
 
 .review-user{

@@ -25,4 +25,5 @@
 .game-name:hover,
 .game-icon:hover{
     color: rgba(130, 130, 130, 0.5);
+    cursor: pointer;
 }

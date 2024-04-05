@@ -1,18 +1,27 @@
-.game-details{
+.game-view-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+    padding-right: 200px;
+    padding-left: 200px;
+}
+
+.game-details-container{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 90px;
-    margin-right: 200px;
-    margin-left: 210px;
+}
+.similar-games-container,
+.game-details-avatars-section{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-bottom: 15px;
 }
 
 .game-details-section-info{
     display: flex;
     flex-direction: column;
-    width: 100vh;
-    height: 120vh;
+    height: 125vh;
     padding-top: 20px;
     padding-left: 15px;
 }
@@ -27,15 +36,16 @@
     flex-direction: column;
     align-items: center;
     width: 100vh;
-    height: 120vh;
+    height: 90vh;
     padding-top: 20px;
+    padding-left: 50px;
 }
 
 .game-details-section-images-trailer{
     display: flex;
     width: 500px;
     height: 300px;
-    margin-bottom: 32px;
+
 }
 
 .game-details-section-images-screenshots{
@@ -77,4 +87,24 @@
     border-radius: 15px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.price-history-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+.price-history-graph{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.similar-games{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }

@@ -1,7 +1,7 @@
 
 .card-section-1{
-    width: 415px;
-    height: 330px;
+    width: 332px;
+    height: 274px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -20,8 +20,8 @@
 }
 
 .game-card-image{
-    width: 415px;
-    height: 210px;
+    width: 332px;
+    height: 168px;
     background-size: cover;
     border-top-left-radius:15px;
     border-top-right-radius:15px;
@@ -32,10 +32,11 @@
 .card-section-1-data{
     display: flex;
     flex-direction: column;
+    font-size: 12px;
 }
 
 .card-section-2{
-    width: 415px;
+    width: 332px;
     height: 210px;
     background-color: white;
     display: none;

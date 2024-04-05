@@ -26,11 +26,15 @@
 .avatar{
     display: flex;
     flex-direction: column;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: 100% 100%;
     margin: 10px 20px;
     border-radius: 25%;
+}
+
+.avatar:hover{
+    cursor: pointer;
 }
 
 .avatar-container{

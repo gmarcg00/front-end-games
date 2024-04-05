@@ -1,0 +1,21 @@
+.carousel{
+    background-color: blue;
+    height: 150px;
+    width: 150px;
+    text-align:center;
+    align-items: center;
+    border-radius: 50%;
+    margin: auto 15px;
+    overflow: hidden;
+    z-index: 100;
+
+}
+
+.c1{
+    margin-top: 80px;
+    display: flex;
+}
+
+.alice-carousel__dots-item:not(.__custom):hover, .alice-carousel__dots-item:not(.__custom).__active{
+    background-color: rgb(153, 131, 131) !important;
+}

@@ -1,0 +1,32 @@
+.avatar-view-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 180px;
+    padding-right: 250px;
+    padding-left: 250px;
+}
+
+.avatar-details-image-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.avatar-details-price-section{
+
+}
+
+.avatar-games-container{
+    display: flex;
+    justify-content: center;
+}
+
+.avatar-games{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}

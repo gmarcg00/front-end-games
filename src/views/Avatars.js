@@ -25,7 +25,7 @@ export const Avatars = () => {
             <div className="avatars-section">
                 {
                     avatars.map((avatar) =>(
-                        <Avatar name={avatar.name} price={avatar.price} index={`section-${avatar.id}`} backgroundImage={avatar.backgroundImage} textColor={"color-white"}/>
+                        <Avatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={`section-${avatar.id}`} backgroundImage={avatar.backgroundImage} textColor={"color-white"}/>
                     ))
                 }
             </div>
