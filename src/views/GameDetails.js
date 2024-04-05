@@ -16,7 +16,7 @@ export const GameDetails = () => {
     const [similarGames, setSimilarGames] = useState([]);
 
     const host = process.env.REACT_APP_GR_GAMES_HOST;
-    const uri = process.env.REACT_APP_GR_GAMES_GAMES_URI;
+    const uri = process.env.REACT_APP_GR_GAMES_URI;
     const gameUrl = `https://${host}${uri}/${slug}`;
     let similarGamesUrl = `https://${host}${uri}?genres=`;
 
