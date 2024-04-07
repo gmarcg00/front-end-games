@@ -1,12 +1,14 @@
 import React, {useContext, useEffect,useState} from "react";
 import {ProfileHeaderBarItem} from "./ProfileHeaderBarItem";
 import {GameCardMedium} from "../views/Games/GameCard/GameCardMedium";
-import {Avatar} from "../views/Avatars/Avatar";
+import {WebAvatar} from "../views/Avatars/WebAvatar";
+import Avatar from '@mui/material/Avatar';
 import '../../styles/header/header.css';
 import {Link} from "react-router-dom";
 import {AvatarContext} from "../../context/AvatarContext";
 import {GamesContext} from "../../context/GamesContext";
 import {Review} from "../views/Reviews/Review";
+import {logout} from "../../api/request/AuthRequest";
 
 export const Header = () => {
     const [arrayGames,setArrayGames] = useState([]);
@@ -27,6 +29,8 @@ export const Header = () => {
         let searchIcon = document.getElementById("search-icon");
         let searchBarCloseIcon = document.getElementById("search-bar-close-icon");
         let profileIcon = document.getElementById("profile-icon");
+        let profileActiveIcon = document.getElementById("profile-active-icon");
+        let logoutLabel = document.getElementById("logout-label");
         let avatarText = document.getElementById("avatar-text");
         let avatarBar = document.getElementById("avatar-bar");
         let gamesText = document.getElementById("games-text");
@@ -54,7 +58,7 @@ export const Header = () => {
                 li.classList.add("color-black")
             });
             searchIcon.classList.add("color-black")
-            profileIcon.classList.add("color-black")
+            if(window.localStorage.getItem("loggedUser") === null) profileIcon.classList.add("color-black")
         };
 
         const cursorOutHeader = () => {
@@ -63,7 +67,17 @@ export const Header = () => {
                 li.classList.remove("color-black")
             });
             searchIcon.classList.remove("color-black")
-            profileIcon.classList.remove("color-black")
+            if(window.localStorage.getItem("loggedUser") === null) profileIcon.classList.remove("color-black")
+        }
+
+        const handleLogout = () => {
+            logout()
+                .then((response) => {
+                    if(response.ok){
+                        window.localStorage.removeItem("loggedUser")
+                        window.location.reload()
+                    }
+                })
         }
 
         const addEventsListeners = () => {
@@ -120,11 +134,22 @@ export const Header = () => {
                 cursorOutHeader()
                 reviewsBar.classList.remove("header-reviews-visible")
             })
+
+            if(logoutLabel!==null) {
+                logoutLabel.addEventListener("click", () => {
+                    handleLogout()
+                })
+            }
+
         }
 
         searchIcon.addEventListener("click", enableSearchVisibility)
         searchBarCloseIcon.addEventListener("click", disableSearchVisibility)
-        profileIcon.addEventListener("click",enableProfileVisibility)
+        if(window.localStorage.getItem("loggedUser") === null){
+            profileIcon.addEventListener("click",enableProfileVisibility)
+        } else{
+            profileActiveIcon.addEventListener("click",enableProfileVisibility)
+        }
         header.addEventListener("mouseenter", cursorOnHeader)
         header.addEventListener("mouseleave", cursorOutHeader)
         addEventsListeners()
@@ -152,7 +177,11 @@ export const Header = () => {
                 </nav>
                 <div className="header-icons">
                     <i id="search-icon" className="fa fa-search"></i>
-                    <i id="profile-icon" className="fa-solid fa-user"></i>
+                    {
+                        window.localStorage.getItem("loggedUser")
+                        ? (<Avatar alt="Cindy Baker" src="https://i.pravatar.cc/150?img=1" sx={{ width: 32, height: 32 }} id="profile-active-icon" />)
+                        : (<i id="profile-icon" className="fa-solid fa-user"></i>)
+                    }
                     <i></i>
                     <i></i>
                     <i></i>
@@ -167,14 +196,23 @@ export const Header = () => {
                 <i id="search-bar-close-icon" className="fa-solid fa-x search-bar-icon"></i>
             </div>
             <div id="profile-bar" className="header-profile" >
-                 <ProfileHeaderBarItem text={"Sign up"} iconClass={"fa-solid fa-user-plus"} barItemName={"signup"}/>
-                 <ProfileHeaderBarItem text={`Log in`} iconClass={"fa-solid fa-arrow-right-to-bracket"} barItemName={"login"} />
+                {
+                    window.localStorage.getItem("loggedUser")
+                    ? (
+                            <ProfileHeaderBarItem text={"Log out"} iconClass={"fa-solid fa-user-plus"} barItemName={"logout"} />
+                    )
+                    : (   <>
+                            <ProfileHeaderBarItem text={"Sign up"} iconClass={"fa-solid fa-user-plus"} barItemName={"signup"}/>
+                            <ProfileHeaderBarItem text={`Log in`} iconClass={"fa-solid fa-arrow-right-to-bracket"} barItemName={"login"} />
+                          </>
+                    )
+                }
             </div>
             <div id="avatar-bar" className="header-shop">
                 <div className="avatars-container">
                     {
                         arrayAvatars.map((avatar) =>(
-                            <Avatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={avatar.id} backgroundImage={avatar.base64Img} textColor={"color-black"}/>
+                            <WebAvatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={avatar.id} backgroundImage={avatar.base64Img} textColor={"color-black"}/>
                         ))
                     }
                 </div>

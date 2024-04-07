@@ -18,7 +18,12 @@ export const ProfileHeaderBarItem = ({text,iconClass,barItemName}) => {
     return(
         <div className="header-profile-item">
             <i className={`${iconClass} profile-bar-icon`}></i>
-            <Link to={`/${barItemName}`}><label className="profile-bar-item-label">{text}</label></Link>
+            {
+                (barItemName !== "logout")
+                    ? <Link to={`/${barItemName}`}><label className="profile-bar-item-label">{text}</label></Link>
+                    : <label id="logout-label" className="profile-bar-item-label">{text}</label>
+
+            }
             <input className="empty-input"></input>
             <i id={`${barItemName}-bar-close-icon `} className={`fa-solid fa-x search-bar-icon ${barItemName}-bar-close-icon`}></i>
         </div>

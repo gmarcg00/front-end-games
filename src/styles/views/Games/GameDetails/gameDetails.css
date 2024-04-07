@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     margin-top: 90px;
-    padding-right: 200px;
-    padding-left: 200px;
+    padding-right: 125px;
+    padding-left: 125px;
 }
 
 .game-details-container{
@@ -24,6 +24,7 @@
     height: 125vh;
     padding-top: 20px;
     padding-left: 15px;
+    width: 66%;
 }
 
 .game-details-section-info-title{
@@ -35,7 +36,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vh;
+    width: 33%;
     height: 90vh;
     padding-top: 20px;
     padding-left: 50px;
@@ -73,6 +74,7 @@
 
 .game-details-section-info-description{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
 }
 
@@ -107,4 +109,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.game-additional-details-social{
+    display: flex;
+    flex-direction: column;
 }

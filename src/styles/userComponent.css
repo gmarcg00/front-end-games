@@ -1,0 +1,21 @@
+.user-component-container{
+    display: flex;
+    flex-direction: row;
+    max-height: 56px;
+    margin-top: 25px;
+}
+
+.user-component-container-info{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: small;
+}
+
+.user-component-container-info-name,
+.user-component-container-info-username{
+    margin-left: 14px;
+}
+

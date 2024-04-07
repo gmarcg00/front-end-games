@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from "react";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import Alert from '@mui/material/Alert';
 import {Item} from "./Item";
 import '../styles/test.css';
 
@@ -31,23 +32,7 @@ export const Test = () => {
 
     return (
         <div className="c1">
-            <AliceCarousel
-                //paddingLeft={1035}
-                //autoWidth={true}
-                infinite={true}
-                //autoPlay={true}
-                autoPlayInterval={1000}
-                autoPlayDirection={"ltr"}
-                animationType={"fadeout"}
-                //disableButtonsControls={true}
-                //keyboardNavigation={false}
-                items={items}
-                responsive={responsive}
-                controlsStrategy="alternate"
-                activeIndex={0}
-                mouseTracking={true}
-
-            />
+            <Alert severity="success" className={"alert"}>Log in successfully.</Alert>
         </div>
     );
 

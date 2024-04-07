@@ -5,10 +5,11 @@ import {Footer} from "../components/footer/Footer";
 import {GameTrailer} from "../components/views/Games/GameDetails/GameTrailer";
 import {GameScreenshot} from "../components/views/Games/GameDetails/GameScreenshot";
 import '../styles/views/Games/GameDetails/gameDetails.css';
-import {Avatar} from "../components/views/Avatars/Avatar";
+import {WebAvatar} from "../components/views/Avatars/WebAvatar";
 import {CircularProgress} from "@mui/material";
 import { LineChart} from "@mui/x-charts";
 import {GameCardMedium} from "../components/views/Games/GameCard/GameCardMedium";
+import {UserComponent} from "../components/UserComponent";
 
 export const GameDetails = () => {
     const { slug } = useParams();
@@ -80,7 +81,7 @@ export const GameDetails = () => {
                                     <div className="avatars-container">
                                         {
                                             game.avatars.map((avatar) =>(
-                                                <Avatar name={avatar.name}  slug={avatar.slug} price={avatar.price} index={avatar.id} backgroundImage={avatar.base64Img} textColor={"color-white"}/>
+                                                <WebAvatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={avatar.id} backgroundImage={avatar.base64Img} textColor={"color-white"}/>
                                             ))
                                         }
                                     </div>
@@ -137,6 +138,8 @@ export const GameDetails = () => {
                                 </div>
                                 <div className="game-additional-details-social color-white">
                                     <h2>People who like it</h2>
+                                    <UserComponent name={"John Doe"} username={"@johndoe"} userProfileImage={game.background_image}/>
+                                    <UserComponent name={"John Doe"} username={"@johndoe"} userProfileImage={"https://i.pravatar.cc/150?img=1"}/>
                                 </div>
                             </div>
                         </div>

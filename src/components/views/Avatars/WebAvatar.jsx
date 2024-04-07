@@ -4,7 +4,7 @@ import '../../../styles/views/Avatars/avatar.css';
 
 
 
-export const Avatar = ({name,slug,price,backgroundImage,index,textColor}) => {
+export const WebAvatar = ({name,slug,price,backgroundImage,index,textColor}) => {
 
     useEffect(() => {
         document.getElementById(`avatar-${index}`).style.backgroundImage = `url(${backgroundImage})`;

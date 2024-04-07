@@ -5,7 +5,7 @@ import {Filter} from "../components/views/Games/Filter";
 import '../styles/views/Avatars/avatars.css';
 import {AvatarContext} from "../context/AvatarContext";
 
-import {Avatar} from "../components/views/Avatars/Avatar";
+import {WebAvatar} from "../components/views/Avatars/WebAvatar";
 
 export const Avatars = () => {
     const { avatars } = useContext(AvatarContext);
@@ -25,7 +25,7 @@ export const Avatars = () => {
             <div className="avatars-section">
                 {
                     avatars.map((avatar) =>(
-                        <Avatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={`section-${avatar.id}`} backgroundImage={avatar.backgroundImage} textColor={"color-white"}/>
+                        <WebAvatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={`section-${avatar.id}`} backgroundImage={avatar.backgroundImage} textColor={"color-white"}/>
                     ))
                 }
             </div>

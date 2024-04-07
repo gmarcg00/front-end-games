@@ -70,6 +70,7 @@
 
 .avatars-container{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
 }
 
@@ -174,6 +175,10 @@ a{
 i{
     margin: 0 10px;
     color:white;
+}
+
+#profile-active-icon{
+    cursor: pointer;
 }
 
 
