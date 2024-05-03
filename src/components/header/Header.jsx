@@ -1,20 +1,20 @@
 import React, {useContext, useEffect,useState} from "react";
 import {ProfileHeaderBarItem} from "./ProfileHeaderBarItem";
 import {GameCardMedium} from "../views/Games/GameCard/GameCardMedium";
-import {WebAvatar} from "../views/Avatars/WebAvatar";
 import Avatar from '@mui/material/Avatar';
 import '../../styles/header/header.css';
 import {Link} from "react-router-dom";
-import {AvatarContext} from "../../context/AvatarContext";
-import {GamesContext} from "../../context/GamesContext";
 import {Review} from "../views/Reviews/Review";
 import {logout} from "../../api/request/AuthRequest";
+import {AvatarContext} from "../../context/AvatarContext";
+import {GamesContext} from "../../context/GamesContext";
+import {WebSelectableAvatar} from "../views/Avatars/WebSelectableAvatar";
 
 export const Header = () => {
-    const [arrayGames,setArrayGames] = useState([]);
-
     const { avatars } = useContext(AvatarContext);
     const { games } = useContext(GamesContext);
+
+    const [arrayGames,setArrayGames] = useState([]);
 
     const arrayAvatars = avatars.slice(0, 3);
 
@@ -211,8 +211,8 @@ export const Header = () => {
             <div id="avatar-bar" className="header-shop">
                 <div className="avatars-container">
                     {
-                        arrayAvatars.map((avatar) =>(
-                            <WebAvatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={avatar.id} backgroundImage={avatar.base64Img} textColor={"color-black"}/>
+                        arrayAvatars.map((avatar,index) =>(
+                            <WebSelectableAvatar key={index} name={avatar.name} slug={avatar.slug} price={avatar.price} index={avatar.id} backgroundImage={avatar.base64Img} textColor={"color-black"} clickOn={true}/>
                         ))
                     }
                 </div>

@@ -1,14 +1,12 @@
-import React,{useEffect,useContext} from "react";
+import React,{useEffect} from "react";
 import { useParams } from 'react-router-dom';
-import {GamesContext} from "../context/GamesContext";
 import {Header} from "../components/header/Header";
 import {Footer} from "../components/footer/Footer";
 import '../styles/views/Review/writeReview.css';
 
-export const WriteReview = () => {
+export const WriteReview = ({games}) => {
 
     const { gameId } = useParams();
-    const { games } = useContext(GamesContext);
     const game  = games.find(r => r.id === gameId);
 
     useEffect(() => {

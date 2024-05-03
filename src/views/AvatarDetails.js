@@ -3,8 +3,8 @@ import React, {useEffect, useState} from "react";
 import {Header} from "../components/header/Header";
 import {CircularProgress} from "@mui/material";
 import '../styles/views/Avatars/AvatarDetails/avatarDetails.css';
-import {WebAvatar} from "../components/views/Avatars/WebAvatar";
 import {GameCardMedium} from "../components/views/Games/GameCard/GameCardMedium";
+import {WebSelectableAvatar} from "../components/views/Avatars/WebSelectableAvatar";
 
 
 export const AvatarDetails = () => {
@@ -32,7 +32,7 @@ export const AvatarDetails = () => {
             { (avatar!==undefined && avatar.length!==0)
                 ?<div className="avatar-view-container">
                     <div className="avatar-details-image-section">
-                        <WebAvatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={avatar.id} backgroundImage={avatar.base64Img} textColor={"color-white"}/>
+                        <WebSelectableAvatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={avatar.id} backgroundImage={avatar.base64Img} textColor={"color-white"} clickOn={true}/>
                         <div className="avatar-games-container color-white">
                             <h2>See {avatar.name} in</h2>
                         </div>

@@ -1,8 +1,10 @@
 .user-component-container{
     display: flex;
     flex-direction: row;
-    max-height: 56px;
-    margin-top: 25px;
+    align-items: center;
+    max-height: 66px;
+    gap: 14px;
+    padding-bottom: 25px;
 }
 
 .user-component-container-info{
@@ -11,11 +13,18 @@
     align-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: small;
+    font-size: medium;
+    font-weight: bold;
 }
 
-.user-component-container-info-name,
-.user-component-container-info-username{
-    margin-left: 14px;
+
+.user-component-container-info > p {
+    margin: 0;
+    padding: 3px 0;
 }
+
+
+.user-component-container-button {
+}
+
 

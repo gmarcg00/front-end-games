@@ -1,15 +1,14 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from 'react-router-dom';
 import {Header} from "../components/header/Header";
-import {Footer} from "../components/footer/Footer";
 import {GameTrailer} from "../components/views/Games/GameDetails/GameTrailer";
 import {GameScreenshot} from "../components/views/Games/GameDetails/GameScreenshot";
 import '../styles/views/Games/GameDetails/gameDetails.css';
-import {WebAvatar} from "../components/views/Avatars/WebAvatar";
-import {CircularProgress} from "@mui/material";
-import { LineChart} from "@mui/x-charts";
+import {Button, CircularProgress, Slider} from "@mui/material";
 import {GameCardMedium} from "../components/views/Games/GameCard/GameCardMedium";
 import {UserComponent} from "../components/UserComponent";
+import {Review} from "../components/views/Reviews/Review";
+import {WebSelectableAvatar} from "../components/views/Avatars/WebSelectableAvatar";
 
 export const GameDetails = () => {
     const { slug } = useParams();
@@ -58,7 +57,7 @@ export const GameDetails = () => {
                                 </div>
                                 <div className="game-details-section-info-section">
                                     <h2 className="game-details-section-info-item-title" >Release date:</h2>
-                                    <h2 className="game-details-section-info-item-value">{game.releaseDate}</h2>
+                                    <h2 className="game-details-section-info-item-value">{game.released}</h2>
                                 </div>
                                 <div className="game-details-section-info-section">
                                     <h2 className="game-details-section-info-item-title">Genre:</h2>
@@ -71,52 +70,23 @@ export const GameDetails = () => {
                                 <div className="game-details-section-info-section">
                                     <h2 className="game-details-section-info-item-title">Rating:</h2>
                                     <h2 className="game-details-section-info-item-value">{game.rating}</h2>
+                                    <Button variant="outlined" color="success" size="large">Add to my games</Button>
+                                    <Button variant="outlined">Write a review</Button>
+                                    <Slider
+                                        className="slider"
+                                        marks={true}
+                                        step={0.25}
+                                        max={10}
+                                        min={0}
+                                        size="medium"
+                                        defaultValue={7}
+                                        aria-label="Small"
+                                        valueLabelDisplay="auto"
+                                    />
                                 </div>
                                 <div className="game-details-section-info-description">
                                     <h2 className="game-details-section-info-item-title">About:</h2>
                                     <h3 className="game-details-section-info-item-value">{game.description}</h3>
-                                </div>
-                                <div className="game-details-avatars-section">
-                                    <h2>Avatars</h2>
-                                    <div className="avatars-container">
-                                        {
-                                            game.avatars.map((avatar) =>(
-                                                <WebAvatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={avatar.id} backgroundImage={avatar.base64Img} textColor={"color-white"}/>
-                                            ))
-                                        }
-                                    </div>
-                                </div>
-                                <div className="similar-games-container">
-                                    <h2>Games like {game.name}</h2>
-                                    <div className="similar-games">
-                                        {
-                                            similarGames.slice(0,4).map((game) => {
-                                                return (
-                                                    <div id={`game-container-${game.id}`} key={`game-${game.id}`}
-                                                         className="game-card-medium-container">
-                                                        <GameCardMedium game={game} index={game.id}/>
-                                                    </div>
-                                                )
-                                            })
-                                        }
-                                    </div>
-                                </div>
-
-                                <div className="price-history-container">
-                                    <h2>Pricing history</h2>
-                                    <div className="price-history-graph">
-                                        <LineChart
-                                            xAxis={[{data: [1, 2, 3, 5, 8, 10]}]}
-                                            series={[
-                                                {
-                                                    data: [2, 5.5, 2, 8.5, 1.5, 5],
-                                                    color: 'red',
-                                                },
-                                            ]}
-                                            width={500}
-                                            height={300}
-                                        />
-                                    </div>
                                 </div>
                             </div>
                             <div className="game-details-section-images">
@@ -140,9 +110,45 @@ export const GameDetails = () => {
                                     <h2>People who like it</h2>
                                     <UserComponent name={"John Doe"} username={"@johndoe"} userProfileImage={game.background_image}/>
                                     <UserComponent name={"John Doe"} username={"@johndoe"} userProfileImage={"https://i.pravatar.cc/150?img=1"}/>
+                                    <UserComponent name={"John Doe"} username={"@johndoe"} userProfileImage={"https://i.pravatar.cc/150?img=1"}/>
                                 </div>
                             </div>
                         </div>
+                        <div className="game-details-avatars-section">
+                            <h2>Avatars</h2>
+                            <div className="avatars-container">
+                                {
+                                    game.avatars.map((avatar) =>(
+                                        <WebSelectableAvatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={avatar.id} backgroundImage={avatar.base64Img} textColor={"color-white"} clickOn={true}/>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                        <div className="similar-games-container">
+                            <h2>Games like {game.name}</h2>
+                            <div className="similar-games">
+                                {
+                                    similarGames.slice(0,4).map((game) => {
+                                        return (
+                                            <div id={`game-container-${game.id}`} key={`game-${game.id}`}
+                                                 className="game-card-medium-container">
+                                                <GameCardMedium game={game} index={game.id}/>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+                        <div className="reviews-container-x">
+                            <h2>Reviews and Comments</h2>
+                            <div className="reviews">
+                                <Review title={"Awesome"} description={"Exciting gameplay mechanics with immersive storytelling; visually stunning graphics elevate the experience. A must-play title for both casual gamers and hardcore enthusiasts"} userName={"alex24"} date={"10-10-2022"} gameImage={"https://media.rawg.io/media/games/a5a/a5a7fb8d9cb8063a8b42ee002b410db6.jpg"} userImage={"/images/ellie.jpg"} index={"header-1-1"}/>
+                                <Review title={"Awesome"} description={"Exciting gameplay mechanics with immersive storytelling; visually stunning graphics elevate the experience. A must-play title for both casual gamers and hardcore enthusiasts"} userName={"alex24"} date={"10-10-2022"} gameImage={"https://media.rawg.io/media/games/a5a/a5a7fb8d9cb8063a8b42ee002b410db6.jpg"} userImage={"/images/ellie.jpg"} index={"header-1-2"}/>
+                                <Review title={"Awesome"} description={"Exciting gameplay mechanics with immersive storytelling; visually stunning graphics elevate the experience. A must-play title for both casual gamers and hardcore enthusiasts"} userName={"alex24"} date={"10-10-2022"} gameImage={"https://media.rawg.io/media/games/a5a/a5a7fb8d9cb8063a8b42ee002b410db6.jpg"} userImage={"/images/ellie.jpg"} index={"header-1-3"}/>
+
+                            </div>
+                        </div>
+
                     </div>
                 : (<div id="containerMainSection" className="container-loading">
                     <CircularProgress size={75} color="inherit"/>

@@ -1,14 +1,12 @@
-import React, {useContext, useEffect} from "react";
+import React from "react";
 import {Header} from "../components/header/Header";
 import {Footer} from "../components/footer/Footer";
 import {Filter} from "../components/views/Games/Filter";
 import '../styles/views/Avatars/avatars.css';
-import {AvatarContext} from "../context/AvatarContext";
 
-import {WebAvatar} from "../components/views/Avatars/WebAvatar";
+import {WebSelectableAvatar} from "../components/views/Avatars/WebSelectableAvatar";
 
-export const Avatars = () => {
-    const { avatars } = useContext(AvatarContext);
+export const Avatars = ({avatars}) => {
 
     return(
         <>
@@ -25,7 +23,7 @@ export const Avatars = () => {
             <div className="avatars-section">
                 {
                     avatars.map((avatar) =>(
-                        <WebAvatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={`section-${avatar.id}`} backgroundImage={avatar.backgroundImage} textColor={"color-white"}/>
+                        <WebSelectableAvatar name={avatar.name} slug={avatar.slug} price={avatar.price} index={`section-${avatar.id}`} backgroundImage={avatar.backgroundImage} textColor={"color-white"}/>
                     ))
                 }
             </div>

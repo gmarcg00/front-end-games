@@ -16,6 +16,22 @@
     display: flex;
 }
 
-.alice-carousel__dots-item:not(.__custom):hover, .alice-carousel__dots-item:not(.__custom).__active{
-    background-color: rgb(153, 131, 131) !important;
+
+
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+
 }
+
+.modal-content__platforms{
+    display: flex;
+    width: 50%;;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+

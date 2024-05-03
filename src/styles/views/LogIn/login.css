@@ -1,3 +1,84 @@
+#container-login{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 91vh;
+    margin-top: 90px;
+}
+
+.container-login__column-left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    padding: 50px 50px;
+    gap: 3em;
+    box-sizing: border-box;
+}
+
+.container-login__column-left__content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+#login-section-title{
+    margin-bottom: 0;
+}
+
+.login-section-subtitle{
+    margin-top: 0;
+}
+
+#login-form{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input{
+   margin: 10px 0;
+}
+
+#form-login-button{
+    margin: 20px 0;
+}
+
+.button-login.MuiButton-root{
+    height: 48px;
+    width: 375px;
+    border-radius: 35px;
+}
+
+.login-alternative-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.login-alternative-button.MuiButton-root{
+    border-radius: 35px;
+    height: 48px;
+    width: 90px;
+}
+
+
+.login__row-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    //background-color: blue;
+}
+
+.login__row-1__section-2{
+    display: flex;
+    flex-direction: row;
+    gap: 0.4em;
+}
 
 .login-container{
     display: flex;
@@ -6,34 +87,16 @@
     margin-top: 180px;
 
 }
-.login-form{
-    width: 450px;
-    height: 650px;
-    background-color: whitesmoke;
-    border-radius: 15px;
-}
+
 
 .login-input{
-    height: 45px;
+    height: 50px;
     width: 375px;
     border-radius: 8px;
     border-width: 1px;
     margin: 10px auto;
-
 }
 
-.form-item{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-
-.logo{
-    margin: 35px auto 0;
-    width: 375px;
-    height: 40px;
-}
 
 .login-ok-alert{
     display: flex;
@@ -42,4 +105,23 @@
     width: 50%;
     border-radius: 8px;
     margin: 30px auto;
+}
+
+.not-visible{
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.button-secondary-login{
+    border-radius: 35px;
+    width: 6.5em;
+    height: 3em;
+}
+
+@media (max-width: 1000px){
+    .login-input{
+        height: 3.3em;
+        width: 14em;
+    }
 }

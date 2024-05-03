@@ -1,13 +1,12 @@
-import React, {useContext} from "react";
+import React from "react";
 import {Header} from "../components/header/Header";
 import {Footer} from "../components/footer/Footer";
 import {GameCardMedium} from "../components/views/Games/GameCard/GameCardMedium";
 import {Filter} from "../components/views/Games/Filter";
 import '../styles/views/Games/games.css';
-import {GamesContext} from "../context/GamesContext";
-export const Games = () => {
 
-    const {games} = useContext(GamesContext);
+
+export const Games = ({games}) => {
 
     return (
         <>

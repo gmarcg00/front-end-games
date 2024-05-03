@@ -1,0 +1,32 @@
+.modal-genres{
+    height: 100%;
+}
+
+.modal-genres__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 15px;
+
+}
+
+.modal-genres__content__genres{
+    display: flex;
+    justify-content: center;
+    width: 50%;;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.button{
+    font-size: 1em;
+    padding: 0.25em;
+    width: 12em;
+    height: 3.3em;
+}
+
+.button:hover{
+    filter: grayscale(0%);
+}

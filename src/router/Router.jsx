@@ -21,7 +21,7 @@ export const Router = () => {
                 <Route path="/games" element={<Games/>} />
                 <Route path="/avatars" element={<Avatars/>} />
                 <Route path="/reviews" element={<Reviews/>} />
-                <Route path="/game/:slug" element={<GameDetails/>} />
+                <Route path="/games/:slug" element={<GameDetails/>} />
                 <Route path="/avatars/:slug" element={<AvatarDetails/>} />
                 <Route path="/write/review/:gameId" element={<WriteReview/>} />
                 <Route path="/signup" element={<SignUp/>} />

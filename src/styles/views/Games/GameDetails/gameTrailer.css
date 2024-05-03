@@ -1,5 +1,12 @@
-.video-responsive {
-    padding-top: 5%;
-    padding-bottom: 3%;
-    padding-left: 8%;
+
+.container-iframe{
+    border-radius: 8px;
 }
+
+@media (max-width: 1600px){
+    .container-iframe{
+        width: 309px;
+        height: 192px;
+    }
+}
+

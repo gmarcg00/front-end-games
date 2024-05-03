@@ -1,10 +1,10 @@
-import React,{useContext} from "react";
+import React, {useContext} from "react";
 import '../../../styles/views/Games/gamesSection.css';
-import {GamesContext} from "../../../context/GamesContext";
 import {GameCardMedium} from "./GameCard/GameCardMedium";
+import {GamesContext} from "../../../context/GamesContext";
 
 export const GamesSection = () => {
-    const {games} = useContext(GamesContext);
+    const { games } = useContext(GamesContext);
 
     return(
         <div className="container-games">

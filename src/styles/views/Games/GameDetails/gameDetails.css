@@ -1,30 +1,51 @@
 .game-view-container{
     display: flex;
     flex-direction: column;
-    margin-top: 90px;
+    padding-top: 90px;
     padding-right: 125px;
     padding-left: 125px;
+    gap: 55px;
 }
 
 .game-details-container{
     display: flex;
     flex-direction: row;
+    gap: 40px;
 }
 .similar-games-container,
-.game-details-avatars-section{
+.game-details-avatars-section {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: white;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.reviews-container-x{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.reviews{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
 }
 
 .game-details-section-info{
     display: flex;
     flex-direction: column;
-    height: 125vh;
     padding-top: 20px;
     padding-left: 15px;
     width: 66%;
+    box-sizing: border-box;
 }
 
 .game-details-section-info-title{
@@ -35,31 +56,30 @@
 .game-details-section-images{
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 33%;
     height: 90vh;
     padding-top: 20px;
-    padding-left: 50px;
+    gap: 15px;
+    align-items: center;
 }
 
 .game-details-section-images-trailer{
     display: flex;
-    width: 500px;
-    height: 300px;
-
 }
 
 .game-details-section-images-screenshots{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 500px;
+    justify-content: center;
 }
 
 
 .game-details-section-info-section{
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .game-details-section-info-item-title{
@@ -91,18 +111,7 @@
     margin-right: 10px;
 }
 
-.price-history-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: whitesmoke;
-}
 
-.price-history-graph{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .similar-games{
     display: flex;
@@ -114,4 +123,9 @@
 .game-additional-details-social{
     display: flex;
     flex-direction: column;
+
+}
+
+.slider{
+    width: 200px;
 }

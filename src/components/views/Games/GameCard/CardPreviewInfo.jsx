@@ -16,12 +16,12 @@ export const CardPreviewInfo = ({platformIconClass,title,index,slug}) => {
         <>
             <div className="game-platform-icons">
                 {
-                    platformIconClass.map((icon) =>(
-                        <i className={`${icon} game-icon`}></i>
+                    platformIconClass.map((icon,index) =>(
+                        <i key={index} className={`${icon} game-icon`}></i>
                     ))
                 }
             </div>
-            <Link to={`/game/${slug}`}> <label className="game-name"> {title}</label></Link>
+            <Link to={`/games/${slug}`}> <label className="game-name"> {title}</label></Link>
             <div className="game-review-data-icons">
                 <i className="fa-solid fa-heart game-icon"></i>
                 <i id={`write-review-button-${index}`} className="fa-solid fa-message game-icon"></i>

@@ -1,0 +1,29 @@
+.modal-platforms{}
+
+.modal-platforms__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+
+}
+
+.modal-platforms__content_platforms{
+    display: flex;
+    justify-content: center;
+    width: 50%;;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.button{
+    font-size: 0.92em;
+    padding: 0.25em;
+    width: 12em;
+}
+
+.button:hover{
+    filter: grayscale(0%);
+}
