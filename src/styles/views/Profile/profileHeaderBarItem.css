@@ -1,33 +1,9 @@
-.header-profile-item{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    height: 90px;
-    margin-left: 40px;
-    cursor: pointer;
-}
 
-.profile-bar-icon{
-    font-size: 22px;
-}
 
-.profile-bar-item-label{
-    font-size: 25px;
-    margin-left: 55px;
-    cursor: pointer;
-    width: 2px;
-}
 
-.close-icon-container{
-    display: flex;
-}
 
-.empty-input{
-    opacity: 0;
-    cursor: auto;
-    pointer-events: none;
-    width: 80%;
-}
+
+
+
 
 

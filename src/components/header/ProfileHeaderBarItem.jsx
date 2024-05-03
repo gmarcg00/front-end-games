@@ -24,7 +24,7 @@ export const ProfileHeaderBarItem = ({text,iconClass,barItemName}) => {
                     : <label id="logout-label" className="profile-bar-item-label">{text}</label>
 
             }
-            <input className="empty-input"></input>
+
             <i id={`${barItemName}-bar-close-icon `} className={`fa-solid fa-x search-bar-icon ${barItemName}-bar-close-icon`}></i>
         </div>
     )

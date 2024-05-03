@@ -3,11 +3,23 @@
     flex-direction: column;
 }
 
+.header{
+    width: 100%;
+    height: 9.5vh;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: Jazz LET, fantasy;
+    font-size: 22px;
+    z-index: 10;
+}
+
 .header-search{
     width: 100%;
-    height: 90px;
+    height: 9.5vh;
     position: fixed;
-    margin-top: 90px;
+    margin-top: 9.5vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -19,9 +31,9 @@
 
 .header-profile{
     width: 100%;
-    height: 180px;
+    height: 19vh;
     position: fixed;
-    margin-top: 90px;
+    margin-top: 9.5vh;
     display: flex;
     flex-direction: column;
     opacity: 0;
@@ -29,12 +41,45 @@
     pointer-events: none;
 }
 
+.header-profile-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 9.5vh;
+    cursor: pointer;
+    margin-left: 4.3vh;
+    margin-right: 4.3vh;
+    position: relative;
+}
+#header-profile__logout,
+#header-profile__login,
+#header-profile__signup{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 9.5vh;
+    cursor: pointer;
+    margin-left: 4.3vh;
+    margin-right: 4.3vh;
+    position: relative;
+}
+
+.header-profile-link{
+    width: 100vw;
+}
+
+.header-profile-label{
+    font-size: 25px;
+    cursor: pointer;
+    padding-left: 2vw;
+}
+
 
 .header-reviews{
     width: 100%;
-    height: 304px;
+    height: 31.5vh;
     position: fixed;
-    margin-top: 90px;
+    margin-top: 9.5vh;
     display: none;
     flex-direction: row;
     pointer-events: none;
@@ -46,15 +91,20 @@
 .header-games,
 .header-shop{
     width: 100%;
-    height: 304px;
+    height: 31.5vh;
     position: fixed;
-    margin-top: 90px;
+    margin-top: 9.5vh;
     display: none;
     flex-direction: column;
     pointer-events: none;
     background-color: whitesmoke;
     justify-content: center;
     align-items: center;
+}
+
+#list{
+    padding: 0 0;
+    margin: 0 0;
 }
 
 .list-item{
@@ -80,22 +130,15 @@
 
 }
 
+
+#login-label{
+    //padding-right: 91%;
+}
+
 .header-search-visible,
 .header-profile-visible{
     opacity: 1;
     pointer-events: auto;
-}
-
-.header{
-    width: 100%;
-    height: 90px;
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-family: Jazz LET, fantasy;
-    font-size: 22px;
-    z-index: 10;
 }
 
 .header:hover{

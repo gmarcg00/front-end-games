@@ -7,7 +7,13 @@ import {LoginModal} from "../components/modal/LoginModal";
 export const Test = () => {
 
     return (
-        <div>
+        <div className="padre">
+            <div className="hijo">
+                Soy el hijo 1
+            </div>
+            <div className="hijo">
+                Soy el hijo 2
+            </div>
         </div>
 
     );

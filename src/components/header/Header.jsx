@@ -1,7 +1,5 @@
 import React, {useContext, useEffect,useState} from "react";
-import {ProfileHeaderBarItem} from "./ProfileHeaderBarItem";
 import {GameCardMedium} from "../views/Games/GameCard/GameCardMedium";
-import Avatar from '@mui/material/Avatar';
 import '../../styles/header/header.css';
 import {Link} from "react-router-dom";
 import {Review} from "../views/Reviews/Review";
@@ -9,6 +7,12 @@ import {logout} from "../../api/request/AuthRequest";
 import {AvatarContext} from "../../context/AvatarContext";
 import {GamesContext} from "../../context/GamesContext";
 import {WebSelectableAvatar} from "../views/Avatars/WebSelectableAvatar";
+
+import Avatar from '@mui/material/Avatar';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
+import CloseIcon from '@mui/icons-material/Close';
 
 export const Header = () => {
     const { avatars } = useContext(AvatarContext);
@@ -26,6 +30,9 @@ export const Header = () => {
         let headerTextElements = document.querySelectorAll("li");
         let searchBar = document.getElementById("search-bar");
         let profileBar = document.getElementById("profile-bar");
+        let profileBarCloseIconSignUp = document.getElementById("header-profile__signup-close-button");
+        let profileBarCloseIconLogin = document.getElementById("header-profile__login-close-button");
+        let profileBarCloseIconLogout = document.getElementById("header-profile__logout-close-button");
         let searchIcon = document.getElementById("search-icon");
         let searchBarCloseIcon = document.getElementById("search-bar-close-icon");
         let profileIcon = document.getElementById("profile-icon");
@@ -50,6 +57,10 @@ export const Header = () => {
         const enableProfileVisibility = () => {
             if(searchBar.classList.contains("header-search-visible")) searchBar.classList.remove("header-search-visible");
             profileBar.classList.add("header-profile-visible");
+        };
+
+        const disableProfileBarVisibility = () => {
+            profileBar.classList.remove("header-profile-visible");
         };
 
         const cursorOnHeader = ()=> {
@@ -141,15 +152,35 @@ export const Header = () => {
                 })
             }
 
+            if(profileBarCloseIconLogout!==null) {
+                profileBarCloseIconLogout.addEventListener("click", disableProfileBarVisibility)
+            }
+
+            if(profileBarCloseIconSignUp!==null) {
+                profileBarCloseIconSignUp.addEventListener("click", disableProfileBarVisibility)
+            }
+
+            if(profileBarCloseIconLogin!==null) {
+                profileBarCloseIconLogin.addEventListener("click", disableProfileBarVisibility)
+            }
+
+
+
         }
 
         searchIcon.addEventListener("click", enableSearchVisibility)
         searchBarCloseIcon.addEventListener("click", disableSearchVisibility)
+
+        //profileBarCloseIconSignUp.addEventListener("click", disableProfileBarVisibility)
+        //profileBarCloseIconLogin.addEventListener("click", disableProfileBarVisibility)
+
+
         if(window.localStorage.getItem("loggedUser") === null){
             profileIcon.addEventListener("click",enableProfileVisibility)
         } else{
             profileActiveIcon.addEventListener("click",enableProfileVisibility)
         }
+
         header.addEventListener("mouseenter", cursorOnHeader)
         header.addEventListener("mouseleave", cursorOutHeader)
         addEventsListeners()
@@ -182,12 +213,6 @@ export const Header = () => {
                         ? (<Avatar alt="Cindy Baker" src="https://i.pravatar.cc/150?img=1" sx={{ width: 32, height: 32 }} id="profile-active-icon" />)
                         : (<i id="profile-icon" className="fa-solid fa-user"></i>)
                     }
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
                 </div>
             </div>
             <div id="search-bar" className="header-search">
@@ -198,13 +223,28 @@ export const Header = () => {
             <div id="profile-bar" className="header-profile" >
                 {
                     window.localStorage.getItem("loggedUser")
-                    ? (
-                            <ProfileHeaderBarItem text={"Log out"} iconClass={"fa-solid fa-user-plus"} barItemName={"logout"} />
+                    ?
+                    (
+                        <div id="header-profile__logout">
+                            <LogoutIcon fontSize={"large"} className="color-white"/>
+                            <label id={"logout-label"} className={"header-profile-label header-profile-link"}>Log out</label>
+                            <CloseIcon id={"header-profile__logout-close-button"} fontSize={"large"} className="color-white signup-bar-close-icon"/>
+                        </div>
                     )
-                    : (   <>
-                            <ProfileHeaderBarItem text={"Sign up"} iconClass={"fa-solid fa-user-plus"} barItemName={"signup"}/>
-                            <ProfileHeaderBarItem text={`Log in`} iconClass={"fa-solid fa-arrow-right-to-bracket"} barItemName={"login"} />
-                          </>
+                    :
+                    (
+                        <>
+                            <div id="header-profile__signup">
+                                <PersonAddIcon fontSize={"large"} className="color-white"/>
+                                <Link to={`/signup`} className={"header-profile-link"}><label className={"header-profile-label"}>Sign up</label></Link>
+                                <CloseIcon id={"header-profile__signup-close-button"} fontSize={"large"} className="color-white signup-bar-close-icon"/>
+                            </div>
+                            <div id="header-profile__login">
+                                <LoginIcon fontSize={"large"} className="color-white"/>
+                                <Link to={'/login'} className={"header-profile-link"}><label className={"header-profile-label"}>Log in</label></Link>
+                                <CloseIcon id={"header-profile__login-close-button"} fontSize={"large"} className="color-white login-bar-close-icon"/>
+                            </div>
+                        </>
                     )
                 }
             </div>
