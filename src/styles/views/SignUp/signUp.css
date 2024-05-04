@@ -81,3 +81,16 @@
 #form-signup-button{
     margin: 20px 0;
 }
+
+
+@media (max-width: 768px){
+    #container-signup__column-right{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    #container-signup{
+        justify-content: center;
+    }
+}
