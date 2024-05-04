@@ -14,7 +14,7 @@ export const MainSection = () => {
         if (Array.isArray(games) && games.length > 0) {
             let gameTitle = document.getElementById("label-game-title")
             gameTitle.innerText = games[count].name
-            let container = document.getElementById("containerMainSection")
+            let container = document.getElementById("container-main-section")
             container.style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${games[count].background_image})`;
             container.style.backgroundSize = "100% 100%";
             container.style.backgroundSize = "background 2s ease-in-out;"
@@ -33,7 +33,7 @@ export const MainSection = () => {
     return(
 
         (Array.isArray(games) && games.length > 0)
-            ? <div id="containerMainSection" className="container">
+            ? <div id="container-main-section" >
                 <div className="container-info">
                     <Link to={`/game/${games[count].slug}`}> <label id="label-game-title"></label></Link>
                     <div className="container-info-icons">

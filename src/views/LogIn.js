@@ -1,16 +1,15 @@
 import {Header} from "../components/header/Header";
 import {Footer} from "../components/footer/Footer";
 import React, {useEffect, useState} from "react";
-import {Button} from "@mui/material";
-import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import {Link, useNavigate} from "react-router-dom";
 import {LoginModal} from "../components/modal/LoginModal";
 import {login} from "../api/request/AuthRequest";
 
 import TextField from '@mui/material/TextField';
-
+import {Button} from "@mui/material";
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 import '../styles/views/LogIn/login.css';
 
@@ -96,8 +95,29 @@ export const LogIn = () => {
                     </div>
 
                 </div>
-                <div className="login__row-2">
-                    column 2
+                <div className="container-login__column-right">
+                    <div className="container-login__column-right__section-1">
+                        <h1 className="color-white">Game Playground</h1>
+                        <h2 className="color-white">#gamePlayground</h2>
+                        <p className="color-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nunc.</p>
+                    </div>
+                    <div className="container-login__column-right__section-2">
+                        <div className="container-login__column-right__section-2__up">
+                            <div className="container-login__column-right__section-2-img"></div>
+                            <div className="container-login__column-right__section-2-description">
+                                <h1 className="description-title color-white">For the players</h1>
+                                <p className="text-description color-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nunc.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nunc.</p>
+                            </div>
+                        </div>
+                        <div className="container-login__column-right__section-2__down">
+                            <div className="container-login__column-right__section-2-img"></div>
+                            <div className="container-login__column-right__section-2-description">
+                                <h1 className="description-title color-white">Play has no limit</h1>
+                                <p className="text-description color-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nunc.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nunc.</p>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
             {loginMessage === "success" && <LoginModal username={"guille01"} success={success}/>}
