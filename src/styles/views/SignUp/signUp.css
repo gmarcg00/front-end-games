@@ -1,9 +1,10 @@
 #container-signup{
     display: flex;
     flex-direction: row;
-    width: 100%;
-    height: 91vh;
-    margin-top: 90px;
+    height: 90.5vh;
+    margin-top: 9.5vh;
+    margin-left: 6.3vw;
+    margin-right: 6.3vw;
 }
 
 #container-signup__column-left{
@@ -12,8 +13,60 @@
     align-items: center;
     justify-content: center;
     width: 35%;
-    padding: 50px 50px;
+    padding: 0 4.3vw 4.3vw;
     gap: 3em;
+    box-sizing: border-box;
+}
+
+#container-signup__column-right{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 4.3vw 4.3vw;
+}
+
+.container-signup__column-right__section-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+.container-signup__column-right__section-2{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    gap: 1vh;
+}
+
+.container-signup__column-right__section-2__up{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50%;
+}
+
+.container-signup__column-right__section-2__down{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+}
+
+.container-signup__column-right__section-2-img{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://media.rawg.io/media/games/ac7/ac7b8327343da12c971cfc418f390a11.jpg");
+    background-size: 100% 100%;
+    border-radius: 5%;
+    height: 80%;
+    width:  25%;
+}
+
+.container-signup__column-right__section-2-description{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 75%;
+    padding-left: 3vw;
     box-sizing: border-box;
 }
 

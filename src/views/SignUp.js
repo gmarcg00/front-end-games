@@ -121,15 +121,31 @@ export const SignUp = () => {
 
                         </form>
                     </div>
-
                 </div>
                 <div id="container-signup__column-right">
+                    <div className="container-signup__column-right__section-1">
+                        <h1 className="color-white">Game Playground</h1>
+                        <h2 className="color-white">#gamePlayground</h2>
+                        <p className="color-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nunc.</p>
+                    </div>
+                    <div className="container-signup__column-right__section-2">
+                        <div className="container-signup__column-right__section-2__up">
+                            <div className="container-signup__column-right__section-2-img"></div>
+                            <div className="container-signup__column-right__section-2-description">
+                                <h1 className="description-title color-white">For the players</h1>
+                                <p className="text-description color-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nunc.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nunc.</p>
+                            </div>
+                        </div>
+                        <div className="container-signup__column-right__section-2__down">
+                            <div className="container-signup__column-right__section-2-img"></div>
+                            <div className="container-signup__column-right__section-2-description">
+                                <h1 className="description-title color-white">Play has no limit</h1>
+                                <p className="text-description color-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nunc.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nunc.</p>
+                            </div>
 
-
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div className="login__row-2">
-                column 2
             </div>
             {actualModal}
             <Footer/>
